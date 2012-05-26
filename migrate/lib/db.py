@@ -9,8 +9,8 @@ def get_conn():
     return conn
 
 
-def execute_sql(conn, sql):
+def execute_sql(conn, sql, params=()):
     cursor = conn.cursor()
-    cursor.execute(sql)
+    cursor.execute(sql, params)
 
 
