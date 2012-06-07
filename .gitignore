@@ -3,4 +3,5 @@
 *.pyc
 local_settings.py
 .idea/
-local_settings.py
+data/
+build/
