@@ -5,7 +5,7 @@ import sys
 import csv
 
 sys.path.append(os.path.abspath('..'))
-from lvtuso import db
+from lib import db
 
 
 # type: 0: unknown, 1:country, 2:city, 4:spot

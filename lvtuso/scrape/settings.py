@@ -13,3 +13,6 @@ SPIDER_MODULES = ['lvtuso.scrape.spiders']
 NEWSPIDER_MODULE = 'lvtuso.scrape.spiders'
 USER_AGENT = '%s/%s' % (BOT_NAME, BOT_VERSION)
 
+ITEM_PIPELINES = [
+    'lvtuso.scrape.pipelines.MFWPipeline',
+]
