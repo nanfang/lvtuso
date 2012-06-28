@@ -28,7 +28,7 @@ if __name__ == '__main__':
                 header = False
                 continue
             if latitude and longitude:
-                db.execute_sql(conn,"""
+                db.execute(conn,"""
                     INSERT INTO place(name,name_en,slug,type,location) values
                     (%%s,%%s,%%s,%%s,ST_GeomFromText('POINT(%s %s)', 4326))
                     """ % (longitude, latitude)
@@ -36,7 +36,7 @@ if __name__ == '__main__':
                 )
 
             else:
-                db.execute_sql(conn,'INSERT INTO place(name,name_en,slug,type) values (%s,%s,%s,%s)',
+                db.execute(conn,'INSERT INTO place(name,name_en,slug,type) values (%s,%s,%s,%s)',
                     (name,name_en,slug,types.get(type,0))
                 )
             print('imported %s' % name)

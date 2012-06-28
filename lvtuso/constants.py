@@ -5,3 +5,5 @@ class PLACE_LEVEL:
     CITY=8 # City, Area, County
     SPOT=16
 
+class STORE_KEYS:
+    PLACE_TYPE_AHEAD = 'PTA:%s'

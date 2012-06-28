@@ -1,12 +1,13 @@
 from __future__ import division, unicode_literals, print_function
 from lvtuso.scrape.items import MafengwoPlace
-from lvtuso import db
+from lvtuso import storage
+from lvtuso.common import dbutils
 from lvtuso.scrape.spiders import mafengwo
 
 class MFWPipeline(object):
     def __init__(self):
         super(MFWPipeline, self).__init__()
-        self.conn = db.get_conn()
+        self.conn = storage.get_conn()
 
     def process_item(self, item, spider):
         try:
@@ -32,7 +33,7 @@ class MFWPipeline(object):
 
 
     def _save_space(self, item):
-        db.execute_sql(self.conn,
+        dbutils.execute(self.conn,
             """
             INSERT INTO place_mfw(id, p_id, name, hot, rating, level, tags, location)
             values ( %%s, %%s, %%s, %%s, %%s, %%s, %%s, ST_GeomFromText('POINT(%s %s)', 4326))
