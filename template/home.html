@@ -2,29 +2,31 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="gb2312">
 <head>
+    <title>旅途搜</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="author" content="Luna Na"/>
-    <meta name="keywords" content="旅途搜, trip, travel"/>
+    <meta name="author" content="Luna Na, Fang Nan"/>
+    <meta name="keywords" content="旅途搜, 旅游, 旅行, 搜索, trip, travel, lvtuso"/>
     <meta name="description" content=""/>
     <meta name="Copyright" content="http://lvtuso.com/"/>
     <meta name="robots" content="all"/>
-    <title>Lutvso旅途搜</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/style.css">
     <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/css/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
 </head>
 <body>
 <div id="container">
     <!--==============================Header Placeholder=================================-->
     <div id="header"></div>
-
     <!--==============================Page body=================================-->
     <div id="pagebody">
         <div id="search">
             <div><img class="slogan" src="/static/images/slogan.png"/></div>
             <div id="search-form">
                 <form>
-                    <input id="" class="input_out" name="" type="text"
+                    <input id="search_input" class="input_out" name="" type="text"
                            onfocus="this.className='input_on';this.onmouseout=''"
                            onblur="this.className='input_off';this.onmouseout=function(){this.className='input_out'};"
                            onmousemove="this.className='input_move'" onmouseout="this.className='input_out'"/>
@@ -34,7 +36,6 @@
             </div>
         </div>
     </div>
-
     <!--==============================Page body=================================-->
     <div id="footer">
         Lvtuso &copy; 2012 &nbsp; &nbsp; &nbsp;<a href="#privacy" id="modal">Privacy Policy</a><br>
