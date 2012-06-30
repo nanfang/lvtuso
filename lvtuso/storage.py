@@ -13,6 +13,7 @@ _conn = None
 def get_redis():
     return _redis
 
+# only use this in backend, use django connection in front end
 def get_conn():
     global _conn
     if _conn:

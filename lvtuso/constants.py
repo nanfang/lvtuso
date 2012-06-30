@@ -7,3 +7,4 @@ class PLACE_LEVEL:
 
 class STORE_KEYS:
     PLACE_TYPE_AHEAD = 'PTA:%s'
+    PLACE_INFO = 'PI'

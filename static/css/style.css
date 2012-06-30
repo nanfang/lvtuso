@@ -1,7 +1,7 @@
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
 
-/* Global CSS*/
+/* Element Selectors */
 html {
     width: 100%
 }
@@ -27,6 +27,32 @@ a:hover {
     text-decoration: none;
 }
 
+
+/* Class, Attribute, and Pseudo Selectors */
+.slogan {
+    position: absolute;
+    text-align: left;
+    left: 20px;
+    top: -100px;
+}
+
+.search_input {
+    display: inline-block;
+    padding: 2px 8px 0 10px;
+    height: 40px;
+    width: 500px;
+    border: 2px solid #333333;
+    background-color: #fff;
+    opacity: 0.6;
+    border-radius: 8px;
+    outline: none;
+}
+
+.search_input:focus, .search_input:hover{
+    border: 2px solid #cc0000;
+    background-color: #efefef;
+}
+
 /* id selectors */
 #container {
     width: 100%;
@@ -37,7 +63,6 @@ a:hover {
     margin: 0 auto;
 }
 
-/****************************footer************************/
 #footer {
     width: 100%;
     position: absolute;
@@ -45,7 +70,6 @@ a:hover {
     text-align: center;
 }
 
-/* Search form */
 #search {
     border: 0 solid black;
     min-width: 600px;
@@ -84,65 +108,4 @@ a:hover {
 
 #button1 a:active {
     background: url("../images/search_small_.png") 0 -80px no-repeat;
-}
-
-.slogan {
-    position: absolute;
-    text-align: left;
-    left: 20px;
-    top: -100px;
-}
-
-.input_on {
-    padding: 2px 8px 0 10px;
-    width: 500px;
-    height: 40px;
-    border: 2px solid #cc0000;
-    background-color: #efefef;
-    filter: alpha(opacity = 30);
-    -moz-opacity: 0.6;
-    opacity: 0.6;
-    border-radius: 8px;
-    outline: none;
-}
-
-.input_off {
-    padding: 2px 8px 0pt 10px;
-    width: 500px;
-    height: 40px;
-    border: 2px solid #333333;
-    background-color: #fff;
-    filter: alpha(opacity = 30);
-    -moz-opacity: 0.6;
-    opacity: 0.6;
-    border-radius: 8px;
-    outline: none;
-}
-
-.input_move {
-    padding: 2px 8px 0pt 10px;
-    width: 500px;
-    height: 40px;
-    border: 2px solid #cc0000;
-    background-color: #efefef;
-    filter: alpha(opacity = 30);
-    -moz-opacity: 0.6;
-    opacity: 0.6;
-    border-radius: 8px;
-    outline: none;
-}
-
-.input_out {
-    /*height:16px;Ĭ�ϸ߶�*/
-    display: inline-block;
-    padding: 2px 8px 0pt 10px;
-    height: 40px;
-    width: 500px;
-    border: 2px solid #333333;
-    background-color: #fff;
-    filter: alpha(opacity = 30);
-    -moz-opacity: 0.6;
-    opacity: 0.6;
-    border-radius: 8px;
-    outline: none;
 }

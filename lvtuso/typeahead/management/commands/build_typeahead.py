@@ -2,7 +2,9 @@
 from __future__ import division, unicode_literals, print_function
 import re
 import os
+import django.utils.simplejson as json
 from django.core.management.base import BaseCommand
+
 from lvtuso import storage
 from lvtuso import settings
 from lvtuso.common.pinyin import Pinyin
@@ -20,6 +22,9 @@ class Command(BaseCommand):
         cursor = conn.cursor()
         cursor.execute('SELECT id, name, hot, rating FROM place_mfw')
         for id, name, hot, rating in cursor:
+            info = [name, hot, rating]
+            redis.hset(STORE_KEYS.PLACE_INFO, str(id), json.dumps(info))
+
             prefixes = _extract_prefixes(name)
             score = _score(hot, rating)
             for prefix in prefixes:
@@ -31,8 +36,11 @@ def _str_prefix(name):
     for i in range(len(name)):
         prefix = name[:i + 1]
         prefixes.add(prefix)
-        prefixes.add(py.pinyin(prefix))
         prefixes.add(py.pinyin_first(prefix))
+    name_py = py.pinyin(name)
+    for i in range(len(name_py)):
+        prefix = name_py[:i + 1]
+        prefixes.add(prefix)
     return prefixes
 
 def _extract_prefixes(name):
