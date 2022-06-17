@@ -1,5 +1,5 @@
 Django==1.4
 pymigrate==0.1
-scrapy==0.14
+scrapy==2.6.1
 redis
 hiredis
